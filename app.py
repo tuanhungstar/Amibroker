@@ -82,7 +82,7 @@ app.layout = html.Div([
     [Input('refresh_data', 'n_clicks')])
 def update_graph_1(n_clicks):
     pythoncom.CoInitialize()
-    status_update =get_data.scan_amibroker(link_program_scan_update_data)
+    status_update =get_data.scan_amibroker(link_program_scan_update_data,link_save)
     #status_update = pd.read_csv("C:/Users/hung-pro7/Amibroker/result.csv",index_col='Ticker',parse_dates = ['Date/Time'])
     figure1 = get_chart.chart_top5_up_down(app,status_update)
     figure2 = get_chart.chart_Volume_break(app,status_update)
