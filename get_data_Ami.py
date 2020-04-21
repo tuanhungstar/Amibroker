@@ -11,6 +11,10 @@ from selenium.webdriver.support.expected_conditions import presence_of_element_l
 import time
 import win32com.client
 import pythoncom
+import pathlib
+PATH = pathlib.Path(__file__).parent
+DATA_PATH = PATH.joinpath("Resource").resolve()
+
 class get_data:
     def hose_stock_list():
         global webdriver
@@ -38,14 +42,16 @@ class get_data:
         return HOSE_ticker
 
 #''''''''''''''scan_amibroker''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    def scan_amibroker(program_link):
+    def scan_amibroker(program_link,link_save):
+        program_link=str(program_link)
+        link_save =str(link_save)
         AB = win32com.client.Dispatch("Broker.Application")
         Analysis_program = AB.AnalysisDocs.Open(program_link)
         Analysis_program.Run (1)
         while Analysis_program.IsBusy != 0:
             time.sleep(1)
-        result_ok = Analysis_program.Export("C:/Users/hung-pro7/Amibroker/result.csv")
-        df_result = pd.read_csv("C:/Users/hung-pro7/Amibroker/result.csv",index_col='Ticker',parse_dates = ['Date/Time'])
+        result_ok = Analysis_program.Export(link_save)
+        df_result = pd.read_csv(link_save,index_col='Ticker',parse_dates = ['Date/Time'])
         Analysis_program.Close()
         return df_result
 
