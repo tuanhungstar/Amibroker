@@ -12,9 +12,9 @@ PATH = pathlib.Path(__file__).parent
 DATA_PATH = PATH.joinpath("Resource").resolve()
 
 link_program_scan_update_data =DATA_PATH.joinpath("Update data cho chart tam ly.apx")
-link_save = DATA_PATH.joinpath("result.csv")
+link_save = DATA_PATH.joinpath("result.csv") #C:\Users\hung-pro7\Amibroker\result.csv
 
-
+print (link_program_scan_update_data)
 status_update =get_data.scan_amibroker(link_program_scan_update_data,link_save)
 #print(status_update)
 #app.layout = html.Div(html.H6("Phung Tuan Hung"),className ='page main-title')

@@ -56,7 +56,7 @@ class get_data:
         return df_result
 
     def Market_status(df):
-        top5up = df['Ty le tang trong ngay'].nlargest(5)
+        top5up = df['Ty le tang trong ngay'].nlargest(5) #Ty le tang trong ngay
         top5down = df['Ty le tang trong ngay'].nsmallest(5)
         up_ceil = df['Ty le tang trong ngay'][df['Ty le tang trong ngay']>=0.068]
         down_floor = df['Ty le tang trong ngay'][df['Ty le tang trong ngay']<=0.068]
