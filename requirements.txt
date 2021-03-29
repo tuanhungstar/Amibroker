@@ -59,7 +59,7 @@ ply==3.11
 prometheus-client==0.7.1
 prompt-toolkit==3.0.4
 pyarrow==0.13.0
-Pygments==2.6.1
+Pygments==2.7.4
 pymapd==0.21.0
 pyodbc==4.0.30
 pyparsing==2.4.6
