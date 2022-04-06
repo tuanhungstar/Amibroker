@@ -44,7 +44,7 @@ mistune==0.8.4
 nbconvert==5.6.1
 nbformat==4.4.0
 netifaces==0.10.9
-notebook==6.0.3
+notebook==6.4.10
 numba==0.48.0
 numpy==1.18.2
 packaging==20.3
