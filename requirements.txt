@@ -46,7 +46,7 @@ nbformat==4.4.0
 netifaces==0.10.9
 notebook==6.0.3
 numba==0.48.0
-numpy==1.18.2
+numpy==1.22.0
 packaging==20.3
 pandas==1.0.3
 pandas-datareader==0.6.0
